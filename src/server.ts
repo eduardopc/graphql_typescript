@@ -1,4 +1,9 @@
+import "dotenv/config";
+
 import app from "./index";
+import DatabaseBootstrap from './database';
+
+new DatabaseBootstrap().bootstrap();
 
 app().then((server) =>
   server.start(() => {

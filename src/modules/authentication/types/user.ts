@@ -1,14 +1,14 @@
-import { Field, ObjectType } from 'type-graphql';
+import 'reflect-metadata';
+import { Field, InputType } from 'type-graphql';
 
-import Address from './address';
+// import { User } from '../entities/user';
+// import Address from '../entities/address';
 
-@ObjectType()
-class User {
+@InputType()
+export class UserInput {
   @Field()
   identifier: string;
 
-  @Field(() => [Address])
-  address: [Address];
-}
-
-export default User;
+  // @Field(() => Address)
+  // address: Address[];
+} 

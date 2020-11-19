@@ -1,4 +1,4 @@
-import "reflect-metadata";
+import 'reflect-metadata';
 import { GraphQLServer } from "graphql-yoga";
 import { buildTypeDefsAndResolvers } from "type-graphql";
 import { makeExecutableSchema } from "graphql-tools";
@@ -12,7 +12,7 @@ async function bootstrap() {
   const schema: any = makeExecutableSchema({ typeDefs, resolvers });
 
   const server = new GraphQLServer({
-    schema
+    schema,
   });
 
   return server;
