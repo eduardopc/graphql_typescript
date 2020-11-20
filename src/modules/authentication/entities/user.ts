@@ -2,7 +2,7 @@ import { Field, ObjectType, ID } from 'type-graphql';
 import { prop as Property, getModelForClass } from '@typegoose/typegoose';
 
 // import { Ref } from "../../../types";
-// import Address from './address';
+import { Address } from './address';
 
 @ObjectType({ description: "The User Model" })
 export class User {
@@ -13,9 +13,9 @@ export class User {
   @Property({ required: true })
   identifier: string;
 
-  // @Field(() => [Address])
-  // @Property({ref: Address, required: true })
-  // address: Ref<[Address]>;
+  @Field(() => [Address])
+  @Property({ type: Address, required: true, _id: false })
+  address: Address[];
 
   // @Field(() => Date)
   // @Property({ default: new Date(), required: true })

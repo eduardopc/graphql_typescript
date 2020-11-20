@@ -16,10 +16,17 @@ export class UserResolver {
     };
 
     @Mutation(() => User)
-    async createUser(@Arg("data"){ identifier }: UserInput): Promise<User> { 
-      const category = (await UserModel.create({      
-          identifier
+    async createUser(@Arg("data"){ identifier, address }: UserInput): Promise<User> { 
+      const user = (await UserModel.create({      
+          identifier,
+          address
       })).save();
-      return category;
+      return user;
     };
+
+    @Mutation(() => Boolean)
+    async deleteAllUsers() {
+     await UserModel.deleteMany({});
+     return true;
+   }
 }

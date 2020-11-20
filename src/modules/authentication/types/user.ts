@@ -1,14 +1,13 @@
-import 'reflect-metadata';
 import { Field, InputType } from 'type-graphql';
 
-// import { User } from '../entities/user';
-// import Address from '../entities/address';
+import { User } from '../entities/user';
+import { AddressInput } from './address';
 
 @InputType()
-export class UserInput {
+export class UserInput implements Partial<User> {
   @Field()
-  identifier: string;
+  identifier: string; 
 
-  // @Field(() => Address)
-  // address: Address[];
+  @Field(() => [AddressInput])
+  address: AddressInput[];
 } 
