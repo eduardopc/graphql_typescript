@@ -1,4 +1,4 @@
-### GraphQL + Typescript
+# GraphQL + Typescript
 
 Para iniciar o projeto, baixar primeiro todas as dependências:
 
