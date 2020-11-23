@@ -1,7 +1,6 @@
 import { Field, ObjectType, ID } from 'type-graphql';
 import { prop as Property, pre, getModelForClass } from '@typegoose/typegoose';
 
-// import { Ref } from "../../../types";
 import { Address } from './address';
 
 @pre<User>('save', function (next) {
